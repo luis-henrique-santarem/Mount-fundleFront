@@ -1,0 +1,36 @@
+section {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.world {
+    width: 90%;
+    height: 90%;
+    border-radius: 10px;
+    background-image: url("../assets/mapa1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    }
+
+.character {
+    position: absolute;
+    bottom: 60px; /* altura do chão */
+    width: 40px;
+    height: 60px;
+    background-color: red; /* ou troque por uma imagem */
+    transition: left 0.05s linear;
+}
+
+.ground {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+   
+}
+ 
