@@ -24,13 +24,19 @@ export default function Cadastro() {
       // Converte a resposta da requisição em objeto JavaScript
       const data = await response.json()
 
+
+
       // Verifica se a API retornou erro 
       if (data.erro) return
 
-      // Atualiza o estado com o endereço retornado
+            // Exibe mensagem de sucesso
+      document.getElementById("mensagem").textContent = "cadastro realizado com sucesso!";
+      document.getElementById("mensagem").style.color = "green";
     } catch (err) {
       // Captura qualquer erro que aconteça durante a requisição ou conversão
       console.error('Erro ao buscar registrar usuario:', err)
+       document.getElementById("mensagem").textContent = "Erro ao fazer cadastro";
+      document.getElementById("mensagem").style.color = "red";
     }
   }
 
