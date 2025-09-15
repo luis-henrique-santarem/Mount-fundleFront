@@ -1,8 +1,24 @@
-import axios from 'axios';
+export async function registerUser(name, email, password) {
+  try{
+      const response =  await fetch('http://localhost:3307/auth/register', {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+         body: JSON.stringify({ name,email, password })
+      }
+    )
 
-const URL_API = 'http://localhost://3307'
+    if (!response.ok) {
+      throw new Error("Erro na requisição");
+    }
 
- export async function PostUSer(nome, email, senha) {
-    const resposta = await axios.post(URL_API + "/register", {name: nome , email: email, password: senha})
-    return resposta.data
-}
+    document.getElementById("mensagem").textContent = "tudo certo"
+    document.getElementById("mensagem").style.color = "green";
+     return dados = {nome: name, email: email, senha: password}
+  }catch(erro){
+    document.getElementById("mensagem").textContent = "Erro: " + erro
+    document.getElementById("mensagem").style.color = "red";
+  }
+
+  }
