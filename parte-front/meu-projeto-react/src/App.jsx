@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-d
 import Cadastro from "./components/cadastro";
 import Login from "./components/loginUser";
 
+
 export default function App() {
   return (
     <Router>

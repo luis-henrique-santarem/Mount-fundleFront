@@ -1,34 +1,33 @@
 body {
   font-family: "Georgia", "Times New Roman", serif;
-  background: radial-gradient(circle at top, #3b2f2f, #1a1414);
   color: #f4e4c1;
   margin: 0;
   padding: 0;
+   background: radial-gradient(circle at top, #2d2520, #1f1a16);
 }
 
 .container {
   display: flex;
+   min-height: 100vh;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
 }
 
 .auth-section {
   background: linear-gradient(145deg, #2d2520, #1f1a16);
   padding: 2rem;
   border-radius: 12px;
-  max-width: 400px;
+  max-width: 420px;
   width: 100%;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.7),
-    inset 0 0 10px rgba(255, 215, 0, 0.1);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
   border: 2px solid #a37a2c;
 }
 
 .auth-section h2 {
+  color: #e6c670;
   text-align: center;
   margin-bottom: 1rem;
   font-size: 1.8rem;
-  color: #e6c670;
   text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
   font-family: "Cinzel", "Georgia", serif;
 }
@@ -39,10 +38,10 @@ body {
 }
 
 .auth-form label {
+  color: #f1d89f;
   margin-top: 0.9rem;
   margin-bottom: 0.3rem;
   font-size: 0.95rem;
-  color: #f1d89f;
 }
 
 .auth-form input {
@@ -55,19 +54,20 @@ body {
   transition: all 0.2s ease;
 }
 
+
 .auth-form input:focus {
-  outline: none;
   border-color: #e6c670;
   box-shadow: 0 0 6px #e6c670;
+  outline: none;
 }
 
 .btn {
+  color: #1a1414;
   margin-top: 1.5rem;
   padding: 0.8rem;
   border: none;
   border-radius: 6px;
   background: linear-gradient(145deg, #a37a2c, #8c6725);
-  color: #1a1414;
   font-weight: bold;
   cursor: pointer;
   font-size: 1rem;
@@ -80,13 +80,44 @@ body {
 }
 
 .auth-form p {
+  color: #d9c7a0;
   margin-top: 1.2rem;
   font-size: 0.85rem;
   text-align: center;
-  color: #d9c7a0;
 }
 
 .auth-form a {
   color: #e6c670;
   font-weight: bold;
+  text-decoration: none;
+}
+
+.auth-form a:hover {
+  text-decoration: underline;
+}
+
+#mensagem {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #f5e6b5;
+}
+
+.login-link {
+  color: #d9c7a0;
+  margin-top: 1.2rem;
+  font-size: 0.85rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+.login-link span {
+  color: #e6c670;
+  font-weight: bold;
+  text-decoration: underline;
+  transition: color 0.3s;
+}
+
+.login-link span:hover {
+  color: #f4e4c1;
 }
