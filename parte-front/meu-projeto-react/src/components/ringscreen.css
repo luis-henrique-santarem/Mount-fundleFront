@@ -5,25 +5,19 @@ body {
     background-size: cover;
 }
 
-
 .ring-screen {
     padding: 2rem 1.5rem;
     min-height: 100vh;
-    background: url("../img/inventario-textura.png") center/cover no-repeat,
-        radial-gradient(circle at center, #523115 60%, #4e260d 100%);
+    background: url("../img/inventario-textura.png") center/cover no-repeat, radial-gradient(circle at center, #523115 60%, #4e260d 100%);
     color: #f8ecd6;
     font-family: 'Cinzel', serif;
     overflow-y: hidden;
     border: 3px solid rgba(200, 160, 70, 0.3);
     border-radius: 20px;
-    box-shadow: 0 0 40px rgba(200, 160, 70, 0.15),
-        inset 0 0 100px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 40px rgba(200, 160, 70, 0.15),inset 0 0 100px rgba(0, 0, 0, 0.6);
     position: relative;
 }
 
-
-
-/* glow animado nas bordas do inventário */
 .ring-screen::before {
     content: "";
     position: absolute;
@@ -66,14 +60,12 @@ body {
 
 .card {
     background: #38250e;
-    /* mais escuro que o inventário */
     border: 2px solid #c39a4a;
     border-radius: 20px;
     padding: 1.2rem;
     width: 100%;
     max-width: 280px;
-    box-shadow: 0 0 22px rgba(195, 154, 74, 0.25),
-        inset 0 0 12px rgba(255, 225, 150, 0.08);
+    box-shadow: 0 0 22px rgba(195, 154, 74, 0.25),inset 0 0 12px rgba(255, 225, 150, 0.08);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -82,7 +74,6 @@ body {
     overflow: hidden;
 }
 
-/* efeito de brilho leve nas bordas dos cards */
 .card::after {
     content: "";
     position: absolute;
@@ -94,8 +85,7 @@ body {
 
 .card:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 28px rgba(255, 225, 150, 0.45),
-        0 0 18px rgba(195, 154, 74, 0.55);
+    box-shadow: 0 0 28px rgba(255, 225, 150, 0.45), 0 0 18px rgba(195, 154, 74, 0.55);
 }
 
 .card-img {
@@ -141,7 +131,6 @@ body {
     transform: scale(1.06);
 }
 
-/* Responsividade */
 @media (max-width: 1024px) {
     .card-grid {
         grid-template-columns: repeat(2, 1fr);

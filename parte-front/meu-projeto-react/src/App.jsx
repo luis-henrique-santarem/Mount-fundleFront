@@ -10,8 +10,7 @@ export default function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Navigate to="/ringscreen" />} />
-<Route path="/ringscreen" element={<RingScreen />} />
-
+        <Route path="/ringscreen" element={<RingScreen />} />
        {/*<Route path="/" element={<Navigate to="/cadastro" />} /> */}  
         {/*<Route path="/cadastro" element={<Cadastro />} /> */} 
         {/* <Route path="/login" element={<Login />} /> */} 
