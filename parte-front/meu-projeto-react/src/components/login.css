@@ -1,123 +1,122 @@
 body {
-  font-family: "Georgia", "Times New Roman", serif;
-  color: #f4e4c1;
-  margin: 0;
-  padding: 0;
-   background: radial-gradient(circle at top, #2d2520, #1f1a16);
+  font-family: "Georgia", "Times New Roman", serif; /* Fonte padrão */
+  color: #f4e4c1; /* Cor do texto */
+  margin: 0; /* Remove margem padrão */
+  padding: 0; /* Remove padding padrão */
+  background: radial-gradient(circle at top, #2d2520, #1f1a16); /* Fundo com gradiente radial escuro */
 }
 
 .container {
-  display: flex;
-   min-height: 100vh;
-  justify-content: center;
-  align-items: center;
+  display: flex; /* Flex container */
+  min-height: 100vh; /* Altura mínima de 100% da tela */
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
 }
 
 .auth-section {
-  background: linear-gradient(145deg, #2d2520, #1f1a16);
-  padding: 2rem;
-  border-radius: 12px;
-  max-width: 420px;
-  width: 100%;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
-  border: 2px solid #a37a2c;
+  background: linear-gradient(145deg, #2d2520, #1f1a16); /* Fundo com gradiente escuro */
+  padding: 2rem; /* Espaço interno */
+  border-radius: 12px; /* Bordas arredondadas */
+  max-width: 420px; /* Largura máxima do card */
+  width: 100%; /* Ocupa 100% até o máximo */
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.7); /* Sombra externa */
+  border: 2px solid #a37a2c; /* Borda dourada */
 }
 
 .auth-section h2 {
-  color: #e6c670;
-  text-align: center;
-  margin-bottom: 1rem;
-  font-size: 1.8rem;
-  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
-  font-family: "Cinzel", "Georgia", serif;
+  color: #e6c670; /* Cor do título */
+  text-align: center; /* Centraliza o texto */
+  margin-bottom: 1rem; /* Espaço abaixo */
+  font-size: 1.8rem; /* Tamanho da fonte */
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7); /* Sombra no texto */
+  font-family: "Cinzel", "Georgia", serif; /* Fonte decorativa */
 }
 
 .auth-form {
-  display: flex;
-  flex-direction: column;
+  display: flex; /* Flex container */
+  flex-direction: column; /* Organiza em coluna */
 }
 
 .auth-form label {
-  color: #f1d89f;
-  margin-top: 0.9rem;
-  margin-bottom: 0.3rem;
-  font-size: 0.95rem;
+  color: #f1d89f; /* Cor do texto do label */
+  margin-top: 0.9rem; /* Espaço acima */
+  margin-bottom: 0.3rem; /* Espaço abaixo */
+  font-size: 0.95rem; /* Tamanho da fonte */
 }
 
 .auth-form input {
-  padding: 0.6rem;
-  border: 1px solid #a37a2c;
-  border-radius: 6px;
-  background: #2a221d;
-  color: #f4e4c1;
-  font-size: 0.95rem;
-  transition: all 0.2s ease;
+  padding: 0.6rem; /* Espaço interno */
+  border: 1px solid #a37a2c; /* Borda dourada */
+  border-radius: 6px; /* Bordas arredondadas */
+  background: #2a221d; /* Fundo escuro */
+  color: #f4e4c1; /* Cor do texto digitado */
+  font-size: 0.95rem; /* Tamanho da fonte */
+  transition: all 0.2s ease; /* Animação suave */
 }
 
-
 .auth-form input:focus {
-  border-color: #e6c670;
-  box-shadow: 0 0 6px #e6c670;
-  outline: none;
+  border-color: #e6c670; /* Cor da borda ao focar */
+  box-shadow: 0 0 6px #e6c670; /* Sombra ao focar */
+  outline: none; /* Remove borda padrão do navegador */
 }
 
 .btn {
-  color: #1a1414;
-  margin-top: 1.5rem;
-  padding: 0.8rem;
-  border: none;
-  border-radius: 6px;
-  background: linear-gradient(145deg, #a37a2c, #8c6725);
-  font-weight: bold;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: transform 0.2s, background 0.3s;
+  color: #1a1414; /* Cor do texto (escuro) */
+  margin-top: 1.5rem; /* Espaço acima do botão */
+  padding: 0.8rem; /* Espaço interno */
+  border: none; /* Remove borda */
+  border-radius: 6px; /* Bordas arredondadas */
+  background: linear-gradient(145deg, #a37a2c, #8c6725); /* Gradiente dourado */
+  font-weight: bold; /* Texto em negrito */
+  cursor: pointer; /* Cursor de clique */
+  font-size: 1rem; /* Tamanho da fonte */
+  transition: transform 0.2s, background 0.3s; /* Animações suaves */
 }
 
 .btn:hover {
-  background: linear-gradient(145deg, #e6c670, #a37a2c);
-  transform: scale(1.05);
+  background: linear-gradient(145deg, #e6c670, #a37a2c); /* Cor mais clara ao passar o mouse */
+  transform: scale(1.05); /* Aumenta levemente o botão */
 }
 
 .auth-form p {
-  color: #d9c7a0;
-  margin-top: 1.2rem;
-  font-size: 0.85rem;
-  text-align: center;
+  color: #d9c7a0; /* Cor do texto informativo */
+  margin-top: 1.2rem; /* Espaço acima */
+  font-size: 0.85rem; /* Tamanho da fonte */
+  text-align: center; /* Centraliza */
 }
 
 .auth-form a {
-  color: #e6c670;
-  font-weight: bold;
-  text-decoration: none;
+  color: #e6c670; /* Cor dourada do link */
+  font-weight: bold; /* Negrito */
+  text-decoration: none; /* Sem sublinhado */
 }
 
 .auth-form a:hover {
-  text-decoration: underline;
+  text-decoration: underline; /* Sublinha ao passar o mouse */
 }
 
 #mensagem {
-  margin-top: 1rem;
-  text-align: center;
-  font-size: 0.9rem;
-  color: #f5e6b5;
+  margin-top: 1rem; /* Espaço acima */
+  text-align: center; /* Centraliza o texto */
+  font-size: 0.9rem; /* Tamanho da fonte */
+  color: #f5e6b5; /* Cor do texto da mensagem */
 }
 
 .login-link {
-  color: #d9c7a0;
-  margin-top: 1.2rem;
-  font-size: 0.85rem;
-  text-align: center;
-  cursor: pointer;
+  color: #d9c7a0; /* Cor do texto */
+  margin-top: 1.2rem; /* Espaço acima */
+  font-size: 0.85rem; /* Tamanho da fonte */
+  text-align: center; /* Centraliza */
+  cursor: pointer; /* Cursor de clique */
 }
 
 .login-link span {
-  color: #e6c670;
-  font-weight: bold;
-  text-decoration: underline;
-  transition: color 0.3s;
+  color: #e6c670; /* Cor dourada */
+  font-weight: bold; /* Negrito */
+  text-decoration: underline; /* Sublinhado */
+  transition: color 0.3s; /* Transição suave */
 }
 
 .login-link span:hover {
-  color: #f4e4c1;
+  color: #f4e4c1; /* Cor mais clara ao passar o mouse */
 }

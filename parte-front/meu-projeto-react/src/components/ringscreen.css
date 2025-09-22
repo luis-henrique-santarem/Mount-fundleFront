@@ -1,145 +1,143 @@
-
 body {
-    background: url("../img/fundo.png");
-    background-repeat: no-repeat;
-    background-size: cover;
+    background: url("../img/fundo.png"); /* Imagem de fundo da página */
+    background-repeat: no-repeat; /* Não repete a imagem */
+    background-size: cover; /* Faz a imagem cobrir toda a tela */
 }
 
 .ring-screen {
-    padding: 2rem 1.5rem;
-    min-height: 100vh;
+    padding: 2rem 1.5rem; /* Espaço interno */
+    min-height: 100vh; /* Altura mínima igual à altura da tela */
     background: url("../img/inventario-textura.png") center/cover no-repeat, radial-gradient(circle at center, #523115 60%, #4e260d 100%);
-    color: #f8ecd6;
-    font-family: 'Cinzel', serif;
-    overflow-y: hidden;
-    border: 3px solid rgba(200, 160, 70, 0.3);
-    border-radius: 20px;
-    box-shadow: 0 0 40px rgba(200, 160, 70, 0.15),inset 0 0 100px rgba(0, 0, 0, 0.6);
-    position: relative;
+    /* Sobrepõe imagem com gradiente radial no fundo */
+    color: #f8ecd6; /* Cor do texto */
+    font-family: 'Cinzel', serif; /* Fonte personalizada */
+    overflow-y: hidden; /* Oculta rolagem vertical */
+    border: 3px solid rgba(200, 160, 70, 0.3); /* Borda com transparência */
+    border-radius: 20px; /* Bordas arredondadas */
+    box-shadow: 0 0 40px rgba(200, 160, 70, 0.15), inset 0 0 100px rgba(0, 0, 0, 0.6); /* Sombra externa e interna */
+    position: relative; /* Necessário para ::before funcionar */
 }
 
 .ring-screen::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 20px;
-    border: 2px solid rgba(240, 200, 120, 0.25);
-    box-shadow: 0 0 25px rgba(240, 200, 120, 0.2);
-    animation: pulseGlow 4s infinite ease-in-out;
-    pointer-events: none;
+    content: ""; /* Elemento decorativo */
+    position: absolute; /* Sobrepõe toda a seção */
+    inset: 0; /* Preenche o container */
+    border-radius: 20px; /* Bordas arredondadas igual ao pai */
+    border: 2px solid rgba(240, 200, 120, 0.25); /* Borda com brilho suave */
+    box-shadow: 0 0 25px rgba(240, 200, 120, 0.2); /* Brilho ao redor */
+    animation: pulseGlow 4s infinite ease-in-out; /* Animação contínua */
+    pointer-events: none; /* Ignora cliques/mouse */
 }
 
 @keyframes pulseGlow {
-
-    0%,
-    100% {
-        box-shadow: 0 0 20px rgba(240, 200, 120, 0.15);
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(240, 200, 120, 0.15); /* Início/fim da animação */
     }
-
     50% {
-        box-shadow: 0 0 35px rgba(240, 200, 120, 0.35);
+        box-shadow: 0 0 35px rgba(240, 200, 120, 0.35); /* Pico do brilho */
     }
 }
 
 .ring-title {
-    text-align: center;
-    font-size: 2.6rem;
-    color: #f9da8a;
-    margin-bottom: 2rem;
-    text-transform: uppercase;
-    text-shadow: 0 0 14px rgba(255, 214, 109, 0.85),
-        0 0 28px rgba(200, 160, 70, 0.9);
+    text-align: center; /* Centraliza o título */
+    font-size: 2.6rem; /* Tamanho da fonte */
+    color: #f9da8a; /* Cor dourada */
+    margin-bottom: 2rem; /* Espaço abaixo */
+    text-transform: uppercase; /* Letras maiúsculas */
+    text-shadow: 0 0 14px rgba(255, 214, 109, 0.85), 0 0 28px rgba(200, 160, 70, 0.9); /* Brilho no texto */
 }
 
 .card-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.8rem;
-    justify-items: center;
+    display: grid; /* Grid layout */
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas iguais */
+    gap: 1.8rem; /* Espaço entre os cards */
+    justify-items: center; /* Centraliza os cards */
 }
 
 .card {
-    background: #38250e;
-    border: 2px solid #c39a4a;
-    border-radius: 20px;
-    padding: 1.2rem;
-    width: 100%;
-    max-width: 280px;
-    box-shadow: 0 0 22px rgba(195, 154, 74, 0.25),inset 0 0 12px rgba(255, 225, 150, 0.08);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    position: relative;
-    overflow: hidden;
+    background: #38250e; /* Cor de fundo do card */
+    border: 2px solid #c39a4a; /* Borda dourada */
+    border-radius: 20px; /* Bordas arredondadas */
+    padding: 1.2rem; /* Espaço interno */
+    width: 100%; /* Ocupa toda a largura disponível */
+    max-width: 280px; /* Limita a largura máxima */
+    box-shadow: 0 0 22px rgba(195, 154, 74, 0.25), inset 0 0 12px rgba(255, 225, 150, 0.08); /* Sombra suave */
+    display: flex; /* Flex container */
+    flex-direction: column; /* Elementos em coluna */
+    align-items: center; /* Centraliza o conteúdo */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animações suaves */
+    position: relative; /* Necessário para o ::after */
+    overflow: hidden; /* Esconde transbordamento */
 }
 
 .card::after {
-    content: "";
+    content: ""; /* Borda decorativa adicional */
     position: absolute;
     inset: 0;
     border-radius: 20px;
-    border: 1px solid rgba(255, 220, 120, 0.12);
-    pointer-events: none;
+    border: 1px solid rgba(255, 220, 120, 0.12); /* Borda sutil interna */
+    pointer-events: none; /* Ignora cliques */
 }
 
 .card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 28px rgba(255, 225, 150, 0.45), 0 0 18px rgba(195, 154, 74, 0.55);
+    transform: scale(1.05); /* Aumenta o card ao passar o mouse */
+    box-shadow: 0 0 28px rgba(255, 225, 150, 0.45), 0 0 18px rgba(195, 154, 74, 0.55); /* Brilho mais forte */
 }
 
 .card-img {
-    width: 100%;
-    height: 160px;
-    object-fit: cover;
-    border-radius: 14px;
-    margin-bottom: 0.8rem;
+    width: 100%; /* Imagem ocupa toda a largura do card */
+    height: 160px; /* Altura fixa */
+    object-fit: cover; /* Cobre sem distorcer */
+    border-radius: 14px; /* Arredonda imagem */
+    margin-bottom: 0.8rem; /* Espaço abaixo da imagem */
 }
 
 .card-title {
-    color: #ffe9a6;
-    font-size: 1.35rem;
-    margin-bottom: 0.6rem;
-    text-align: center;
-    text-shadow: 0 0 6px #c39a4a;
+    color: #ffe9a6; /* Cor do título */
+    font-size: 1.35rem; /* Tamanho da fonte */
+    margin-bottom: 0.6rem; /* Espaço abaixo */
+    text-align: center; /* Centraliza o texto */
+    text-shadow: 0 0 6px #c39a4a; /* Brilho sutil */
 }
 
 .card-desc {
-    color: #f8ecd6;
-    font-size: 0.95rem;
-    text-align: justify;
-    flex-grow: 1;
+    color: #f8ecd6; /* Cor do texto */
+    font-size: 0.95rem; /* Tamanho da fonte */
+    text-align: justify; /* Justifica o texto */
+    flex-grow: 1; /* Faz o conteúdo crescer e preencher o espaço */
 }
 
 .card-btn {
-    margin-top: 0.8rem;
-    padding: 0.75rem 1.1rem;
-    border: none;
-    border-radius: 12px;
-    background: linear-gradient(145deg, #c39a4a, #f9da8a);
-    color: #1a1414;
-    font-weight: bold;
-    font-size: 0.95rem;
-    cursor: pointer;
-    text-transform: uppercase;
-    box-shadow: 0 0 20px rgba(249, 218, 138, 0.55);
-    transition: 0.3s ease;
+    margin-top: 0.8rem; /* Espaço acima */
+    padding: 0.75rem 1.1rem; /* Espaço interno */
+    border: none; /* Sem borda */
+    border-radius: 12px; /* Botão arredondado */
+    background: linear-gradient(145deg, #c39a4a, #f9da8a); /* Gradiente dourado */
+    color: #1a1414; /* Cor do texto (escuro) */
+    font-weight: bold; /* Negrito */
+    font-size: 0.95rem; /* Tamanho da fonte */
+    cursor: pointer; /* Cursor de clique */
+    text-transform: uppercase; /* Letras maiúsculas */
+    box-shadow: 0 0 20px rgba(249, 218, 138, 0.55); /* Brilho externo */
+    transition: 0.3s ease; /* Transição suave */
 }
 
 .card-btn:hover {
-    background: linear-gradient(145deg, #f9da8a, #c39a4a);
-    transform: scale(1.06);
+    background: linear-gradient(145deg, #f9da8a, #c39a4a); /* Inverte o gradiente ao passar o mouse */
+    transform: scale(1.06); /* Aumenta o botão */
 }
+
+/* RESPONSIVIDADE */
 
 @media (max-width: 1024px) {
     .card-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.2rem;
+        grid-template-columns: repeat(2, 1fr); /* Mostra 2 colunas em telas menores */
+        gap: 1.2rem; /* Reduz o espaçamento */
     }
 }
 
 @media (max-width: 600px) {
     .card-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Apenas uma coluna em telas bem pequenas */
     }
 }

@@ -1,187 +1,186 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  margin: 0; /* Remove margens padrão de todos os elementos */
+  padding: 0; /* Remove padding padrão */
+  box-sizing: border-box; /* Faz com que width e height incluam o padding e a borda */
 }
 
 body {
-  font-family: "Cinzel", "Georgia", serif;
-  background: radial-gradient(circle at top, #22150e, #0c0906);
-  color: #f4e4c1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  padding: 1rem;
+  font-family: "Cinzel", "Georgia", serif; /* Define a fonte principal */
+  background: radial-gradient(circle at top, #22150e, #0c0906); /* Fundo com gradiente radial */
+  color: #f4e4c1; /* Cor do texto */
+  display: flex; /* Flexbox no body */
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  min-height: 100vh; /* Altura mínima de 100% da tela */
+  padding: 1rem; /* Espaçamento interno */
 }
 
 .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
+  display: flex; /* Flexbox */
+  justify-content: center; /* Centraliza conteúdo */
+  align-items: center; /* Alinha verticalmente */
+  width: 100%; /* Ocupa toda a largura */
 }
 
 .auth-section {
-  background: linear-gradient(165deg, #1c1410, #2a201a);
-  padding: 2.8rem 2.2rem;
-  border-radius: 16px;
-  max-width: 460px;
-  width: 100%;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.9), inset 0 0 15px rgba(163, 122, 44, 0.25);
-  border: 2px solid #a37a2c;
-  position: relative;
-  overflow: hidden;
+  background: linear-gradient(165deg, #1c1410, #2a201a); /* Fundo com gradiente linear */
+  padding: 2.8rem 2.2rem; /* Espaçamento interno */
+  border-radius: 16px; /* Bordas arredondadas */
+  max-width: 460px; /* Largura máxima */
+  width: 100%; /* Largura total até o limite de 460px */
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.9), inset 0 0 15px rgba(163, 122, 44, 0.25); /* Sombra externa e interna */
+  border: 2px solid #a37a2c; /* Borda sólida */
+  position: relative; /* Necessário para posicionar o ::before */
+  overflow: hidden; /* Esconde qualquer coisa que ultrapasse */
 }
 
 .auth-section::before {
-  content: "";
-  position: absolute;
-  border-radius: inherit;
-  background: conic-gradient(from 45deg, #a37a2c, #e6c670, #a37a2c);
-  z-index: -1;
-  filter: blur(12px);
-  opacity: 0.25;
+  content: ""; /* Elemento gerado antes */
+  position: absolute; /* Posição absoluta */
+  border-radius: inherit; /* Mesma borda arredondada do elemento pai */
+  background: conic-gradient(from 45deg, #a37a2c, #e6c670, #a37a2c); /* Gradiente cônico */
+  z-index: -1; /* Atrás do conteúdo */
+  filter: blur(12px); /* Efeito de desfoque */
+  opacity: 0.25; /* Transparência */
 }
 
 .auth-section h2 {
-  text-align: center;
-  margin-bottom: 1.8rem;
-  font-size: 2.3rem;
-  color: #e6c670;
-  font-weight: bold;
-  text-transform: uppercase;
-  text-shadow: 0 0 10px rgba(163, 122, 44, 0.8), 0 0 25px rgba(0, 0, 0, 0.9);
-  border-bottom: 2px solid rgba(163, 122, 44, 0.6);
-  padding-bottom: 0.6rem;
-  position: relative;
+  text-align: center; /* Centraliza o texto */
+  margin-bottom: 1.8rem; /* Espaço abaixo */
+  font-size: 2.3rem; /* Tamanho da fonte */
+  color: #e6c670; /* Cor do texto */
+  font-weight: bold; /* Texto em negrito */
+  text-transform: uppercase; /* Letras maiúsculas */
+  text-shadow: 0 0 10px rgba(163, 122, 44, 0.8), 0 0 25px rgba(0, 0, 0, 0.9); /* Sombra no texto */
+  border-bottom: 2px solid rgba(163, 122, 44, 0.6); /* Linha decorativa abaixo do título */
+  padding-bottom: 0.6rem; /* Espaço entre texto e a borda inferior */
+  position: relative; /* Necessário para ::before/::after */
 }
 
 .auth-section h2::before,
 .auth-section h2::after {
-  content: "✦";
-  font-size: 1.2rem;
-  color: #e6c670;
-  margin: 0 0.5rem;
-  text-shadow: 0 0 6px #a37a2c;
-
+  content: "✦"; /* Adiciona o símbolo decorativo antes e depois do título */
+  font-size: 1.2rem; /* Tamanho do símbolo */
+  color: #e6c670; /* Cor */
+  margin: 0 0.5rem; /* Espaço horizontal */
+  text-shadow: 0 0 6px #a37a2c; /* Sombra do símbolo */
 }
 
 .auth-form {
-  display: flex;
-  flex-direction: column;
+  display: flex; /* Flex container */
+  flex-direction: column; /* Coloca os elementos em coluna */
 }
 
 .auth-form label {
-  margin-top: 1rem;
-  margin-bottom: 0.4rem;
-  font-size: 1rem;
-  color: #f1d89f;
+  margin-top: 1rem; /* Espaço acima do label */
+  margin-bottom: 0.4rem; /* Espaço abaixo */
+  font-size: 1rem; /* Tamanho da fonte */
+  color: #f1d89f; /* Cor do texto */
 }
 
 .auth-form input {
-  padding: 0.85rem;
-  border: 1px solid #a37a2c;
-  border-radius: 8px;
-  background: #241c16;
-  color: #f4e4c1;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.6);
+  padding: 0.85rem; /* Espaço interno */
+  border: 1px solid #a37a2c; /* Borda do input */
+  border-radius: 8px; /* Bordas arredondadas */
+  background: #241c16; /* Fundo escuro */
+  color: #f4e4c1; /* Cor do texto digitado */
+  font-size: 1rem; /* Tamanho da fonte */
+  transition: all 0.3s ease; /* Animação suave */
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.6); /* Sombra interna */
 }
 
-
 .auth-form input:focus {
-  border-color: #e6c670;
-  box-shadow: 0 0 15px #e6c670, inset 0 0 6px rgba(0, 0, 0, 0.6);
-  outline: none;
-  transform: scale(1.02);
+  border-color: #e6c670; /* Muda a cor da borda ao focar */
+  box-shadow: 0 0 15px #e6c670, inset 0 0 6px rgba(0, 0, 0, 0.6); /* Destaque ao focar */
+  outline: none; /* Remove a borda padrão do navegador */
+  transform: scale(1.02); /* Aumenta levemente */
 }
 
 .btn {
-  margin-top: 2rem;
-  padding: 1rem;
-  border: none;
-  border-radius: 10px;
-  background: linear-gradient(145deg, #a37a2c, #8c6725);
-  color: #1a1414;
-  font-weight: bold;
-  font-size: 1.05rem;
-  cursor: pointer;
-  text-transform: uppercase;
-  box-shadow: 0 0 20px rgba(163, 122, 44, 0.6), inset 0 0 6px rgba(0, 0, 0, 0.5);
-  transition: transform 0.25s, background 0.3s, box-shadow 0.3s;
-  position: relative;
-  overflow: hidden;
+  margin-top: 2rem; /* Espaço acima */
+  padding: 1rem; /* Espaçamento interno */
+  border: none; /* Sem borda */
+  border-radius: 10px; /* Bordas arredondadas */
+  background: linear-gradient(145deg, #a37a2c, #8c6725); /* Gradiente dourado */
+  color: #1a1414; /* Cor do texto */
+  font-weight: bold; /* Texto em negrito */
+  font-size: 1.05rem; /* Tamanho da fonte */
+  cursor: pointer; /* Cursor de clique */
+  text-transform: uppercase; /* Letras maiúsculas */
+  box-shadow: 0 0 20px rgba(163, 122, 44, 0.6), inset 0 0 6px rgba(0, 0, 0, 0.5); /* Sombra externa e interna */
+  transition: transform 0.25s, background 0.3s, box-shadow 0.3s; /* Animações suaves */
+  position: relative; /* Necessário para o ::before */
+  overflow: hidden; /* Esconde o efeito de brilho ao sair da área */
 }
 
 .btn::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(120deg, rgba(230, 198, 112, 0.4), transparent 70%);
-  transform: translateX(-100%);
-  transition: transform 0.6s ease;
+  content: ""; /* Elemento para o brilho animado */
+  position: absolute; /* Posição absoluta */
+  inset: 0; /* Ocupa toda a área */
+  background: linear-gradient(120deg, rgba(230, 198, 112, 0.4), transparent 70%); /* Brilho */
+  transform: translateX(-100%); /* Começa fora da esquerda */
+  transition: transform 0.6s ease; /* Animação */
 }
 
 .btn:hover::before {
-  transform: translateX(100%);
+  transform: translateX(100%); /* Desliza para a direita */
 }
 
 .btn:hover {
-  background: linear-gradient(145deg, #e6c670, #a37a2c);
-  transform: scale(1.07);
-  box-shadow: 0 0 25px rgba(230, 198, 112, 0.9);
+  background: linear-gradient(145deg, #e6c670, #a37a2c); /* Cor mais clara ao passar o mouse */
+  transform: scale(1.07); /* Aumenta levemente */
+  box-shadow: 0 0 25px rgba(230, 198, 112, 0.9); /* Sombra mais intensa */
 }
 
 .login-link,
 .auth-form p {
-  margin-top: 1.6rem;
-  font-size: 0.95rem;
-  text-align: center;
-  color: #d9c7a0;
-  font-style: italic;
+  margin-top: 1.6rem; /* Espaço acima */
+  font-size: 0.95rem; /* Tamanho da fonte */
+  text-align: center; /* Centraliza o texto */
+  color: #d9c7a0; /* Cor do texto */
+  font-style: italic; /* Estilo itálico */
 }
 
 .login-link span,
 .auth-form a {
-  color: #e6c670;
-  font-weight: bold;
-  text-decoration: none;
-  transition: color 0.3s, text-shadow 0.3s;
+  color: #e6c670; /* Cor dourada */
+  font-weight: bold; /* Negrito */
+  text-decoration: none; /* Sem sublinhado */
+  transition: color 0.3s, text-shadow 0.3s; /* Transições suaves */
 }
 
 .login-link span:hover,
 .auth-form a:hover {
-  color: #f4e4c1;
-  text-shadow: 0 0 8px #e6c670;
+  color: #f4e4c1; /* Cor mais clara ao passar o mouse */
+  text-shadow: 0 0 8px #e6c670; /* Brilho ao passar o mouse */
 }
 
 #mensagem {
-  margin-top: 1.2rem;
-  text-align: center;
-  font-size: 1.05rem;
-  font-weight: bold;
-  color: #f5e6b5;
-  text-shadow: 0 0 8px rgba(163, 122, 44, 0.9);
+  margin-top: 1.2rem; /* Espaço acima */
+  text-align: center; /* Centraliza o texto */
+  font-size: 1.05rem; /* Tamanho da fonte */
+  font-weight: bold; /* Negrito */
+  color: #f5e6b5; /* Cor do texto */
+  text-shadow: 0 0 8px rgba(163, 122, 44, 0.9); /* Sombra/brilho */
 }
 
 @media (max-width: 500px) {
+  /* Ajustes para telas pequenas */
   .auth-section {
-    padding: 2rem 1.5rem;
+    padding: 2rem 1.5rem; /* Reduz o padding */
   }
 
   .auth-section h2 {
-    font-size: 1.8rem;
+    font-size: 1.8rem; /* Reduz o tamanho do título */
   }
 
   .auth-form input {
-    font-size: 0.95rem;
-    padding: 0.75rem;
+    font-size: 0.95rem; /* Fonte menor */
+    padding: 0.75rem; /* Menos padding */
   }
 
   .btn {
-    font-size: 0.95rem;
-    padding: 0.85rem;
+    font-size: 0.95rem; /* Tamanho da fonte menor */
+    padding: 0.85rem; /* Padding reduzido */
   }
 }
