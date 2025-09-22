@@ -9,19 +9,32 @@ function login() {
   async function loginUser(e) {
     e.preventDefault();
     try {
-      const response = await fetch('http:localhost:3307/auth/login', {
+      const response = await fetch('http://localhost:3307/auth/login', {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           "Accept": "application/json"
         },
-        body: JSON.stringify({email: email, password: password})
-        });
+        body: JSON.stringify({ email: email, password: password })
+      });
 
-        if(!response.ok)throw new Error("Erro ao fazer login")
+      if (!response.ok) {
+        const erro = await response.text();
+        return erro
+      }
 
-        document.getElementById("mensagem").textContent = "Login realizado com sucesso"
-        document.getElementById("mensagem").style.color = "green"
+      // Converte a resposta em JSON
+      const dados = await response.json();
+
+      // O token retornado pelo servidor
+      const token = dados.token;
+
+      // Armazena o token no localStorage
+      localStorage.setItem("token", token);
+
+      document.getElementById("mensagem").textContent = "Login realizado com sucesso"
+      document.getElementById("mensagem").style.color = "green"
+      window.location.href = "/ringscreen"
 
     } catch (err) {
       console.log("Erro: " + err)
