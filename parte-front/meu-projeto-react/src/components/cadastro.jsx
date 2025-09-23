@@ -21,11 +21,14 @@ export default function Cadastro() {
        body: JSON.stringify({ name, email, password }) // Envia os dados como JSON
       })
 
-      // Verifica se a API retornou erro 
-      if (!response.ok) throw new Error("Erro ao cadastrar")
+      if (!response.ok) {
+        const erro = await resposta.text();
+        throw new Error(erro);
+      }
 
       document.getElementById("mensagem").textContent = "cadastro realizado com sucesso!";
       document.getElementById("mensagem").style.color = "green";
+      window.location.href = "/login"
     } catch (err) {
       // Captura qualquer erro que aconteça durante a requisição ou conversão
       console.error('Erro ao buscar registrar usuario:', err)

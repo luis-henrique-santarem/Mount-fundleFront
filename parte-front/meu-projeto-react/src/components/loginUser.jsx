@@ -15,18 +15,21 @@ function login() {
     e.preventDefault();
     console.log("teste")
     try {
+
       const request = await fetch('http://localhost:3307/auth/login', {
+
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           "Accept": "application/json"
         },
-        body: JSON.stringify({email: email, password: password})
-        });
+        body: JSON.stringify({ email: email, password: password })
+      });
 
         const response = await request.json()
         addTokenToStorage(response.token)
         navigate("/player/register")
+
 
     } catch (err) {
       console.log(err)

@@ -10,6 +10,7 @@ export default function App() {
   return (
     <Router>
       <Routes>
+
         <Route path="/" element={<Navigate to="/ringscreen" />} />
         <Route path="/ringscreen" element={<RingScreen />} />
         <Route path="/player/register" element={<CreateCharacter/>}/>
@@ -17,6 +18,7 @@ export default function App() {
         {/*<Route path="/" element={<Navigate to="/cadastro" />} /> */}
         /*<Route path="/cadastro" element={<Cadastro />} /> */
         /* <Route path="/login" element={<Login />} /> */
+
       </Routes>
     </Router>
   );
