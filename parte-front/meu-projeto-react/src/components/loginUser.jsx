@@ -1,15 +1,21 @@
 import React, { useState } from 'react'
 import './login.css'
+import { addTokenToStorage, getToken } from '../utils/tokenActions'
+import { Navigate, useNavigate } from 'react-router'
+
 
 function login() {
 
   const [password, setPassword] = useState('')
   const [email, setEmail] = useState('')
 
+  const navigate = useNavigate()
+
   async function loginUser(e) {
     e.preventDefault();
+    console.log("teste")
     try {
-      const response = await fetch('http:localhost:3307/auth/login', {
+      const request = await fetch('http://localhost:3307/auth/login', {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -18,15 +24,12 @@ function login() {
         body: JSON.stringify({email: email, password: password})
         });
 
-        if(!response.ok)throw new Error("Erro ao fazer login")
-
-        document.getElementById("mensagem").textContent = "Login realizado com sucesso"
-        document.getElementById("mensagem").style.color = "green"
+        const response = await request.json()
+        addTokenToStorage(response.token)
+        navigate("/player/register")
 
     } catch (err) {
-      console.log("Erro: " + err)
-      document.getElementById("mensagem").textContent = "Erro ao fazer login " + err;
-      document.getElementById("mensagem").style.color = "red"
+      console.log(err)
     }
   }
 
