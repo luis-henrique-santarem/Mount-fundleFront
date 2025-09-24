@@ -1,15 +1,18 @@
 import React, { useState } from 'react'
 import './login.css'
-import { addTokenToStorage, getToken } from '../utils/tokenActions'
-import { Navigate, useNavigate } from 'react-router'
+import { addTokenToStorage } from '../utils/tokenActions'
+import {useNavigate } from 'react-router'
 
 
-function login() {
+function Login() {
 
+
+
+  const navigate = useNavigate()
   const [password, setPassword] = useState('')
   const [email, setEmail] = useState('')
 
-  const navigate = useNavigate()
+
 
   async function loginUser(e) {
     e.preventDefault();
@@ -26,9 +29,9 @@ function login() {
         body: JSON.stringify({ email: email, password: password })
       });
 
-        const response = await request.json()
-        addTokenToStorage(response.token)
-        navigate("/player/register")
+      const response = await request.json()
+      addTokenToStorage(response.token)
+      navigate("/home")
 
 
     } catch (err) {
@@ -56,4 +59,4 @@ function login() {
   )
 }
 
-export default login
+export default Login

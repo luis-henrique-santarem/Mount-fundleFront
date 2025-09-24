@@ -1,9 +1,11 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import "./cadastro.css";
 import { useNavigate } from "react-router";
+import { addTokenToStorage } from "../utils/tokenActions";
+
 
 export default function Cadastro() {
-  const navigate = useNavigate();
+     const navigate = useNavigate();
 
     const [name, setName]  = useState('')
     const [email, setEmail] = useState('')
@@ -12,7 +14,7 @@ export default function Cadastro() {
   async function handleSubmit(e) {
     e.preventDefault()  // Evita que a página recarregue ao enviar o formulário
     try {
-       const response = await fetch(`http://localhost:3307/auth/register`, {
+       const request = await fetch(`http://localhost:3307/auth/register`, {
         method: 'POST',                        // Método HTTP da requisição
         headers: { 
           "Content-Type": "application/json",
@@ -21,19 +23,30 @@ export default function Cadastro() {
        body: JSON.stringify({ name, email, password }) // Envia os dados como JSON
       })
 
-      if (!response.ok) {
-        const erro = await resposta.text();
-        throw new Error(erro);
-      }
 
-      document.getElementById("mensagem").textContent = "cadastro realizado com sucesso!";
-      document.getElementById("mensagem").style.color = "green";
-      window.location.href = "/login"
+      const response = await request.json()
+
+      if(!request.ok) {
+        console.log("err")
+        return
+      } 
+
+
+      addTokenToStorage(response.token)
+      navigate("/player/register")
+
+      
+
+      // if (!response.ok) {
+      //   // eslint-disable-next-line no-undef
+      //   const erro = await resposta.text();
+      //   throw new Error(erro);
+      // }
+
     } catch (err) {
       // Captura qualquer erro que aconteça durante a requisição ou conversão
       console.error('Erro ao buscar registrar usuario:', err)
-       document.getElementById("mensagem").textContent = "Erro ao fazer cadastro";
-      document.getElementById("mensagem").style.color = "red";
+   
     }
   }
 

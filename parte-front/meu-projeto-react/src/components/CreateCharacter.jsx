@@ -1,62 +1,87 @@
-import React, { useRef, useState } from "react";
+import { useState } from "react";
 import "./cadastro.css";
 import { useNavigate } from "react-router";
 import { getToken } from "../utils/tokenActions";
 
 export default function CreateCharacter() {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
+  const [name, setName] = useState("");
+  const [health, setHealth] = useState(100);
+  const [attack, setAttack] = useState(5);
 
+  const auth = getToken();
 
-    const [name, setName] = useState('')
-    const [health, setHealt] = useState(100)
-    const [attack, setAttack] = useState(5)
+  async function handleSubmit(e) {
+    e.preventDefault();
 
+    try {
+      const response = await fetch("http://localhost:3307/character/", {
+        method: "POST",
+        headers: {
+          Authorization: auth, // ex: "Bearer <token>"
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          health: Number(health),
+          attack: Number(attack),
+        }),
+      });
 
-    const auth =  getToken()
+      if (!response.ok) {
+        throw new Error(`Erro HTTP: ${response.status}`);
+      }
 
-    async function handleSubmit(e) {
-        e.preventDefault()  // Evita que a página recarregue ao enviar o formulário
+      const data = await response.json();
+      console.log("Personagem criado:", data);
 
-        const createCharacter = await fetch("http://localhost:3307/character/", {
-            method: 'POST',
-            headers: {
-                Authorization: auth, // Certifique-se que "auth" contém algo como "Bearer token"
-                "Content-Type": "application/json",
-                "Accept": "application/json",
-            },
-            body: JSON.stringify({ name, health, attack }) // Envia os dados como JSON
-        });
-
-
-        const response = await createCharacter.json()
-        console.log(response)
-
-
-
+      navigate("/home");
+    } catch (error) {
+      console.error("Erro ao criar personagem:", error);
     }
+  }
 
-    return (
-        <div className="container">
-            <section className="auth-section">
-                <h2>Criação do personagem</h2>
-                <form className="auth-form" onSubmit={handleSubmit}>
-                    <label htmlFor="nome">Name:</label>
-                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome" value={name} onChange={(e) => setName(e.target.value)} required />
-                    <label htmlFor="text">:</label>
+  return (
+    <div className="container">
+      <section className="auth-section">
+        <h2>Criação do personagem</h2>
+        <form className="auth-form" onSubmit={handleSubmit}>
+          <label htmlFor="nome">Name:</label>
+          <input
+            type="text"
+            id="nome"
+            placeholder="Digite seu nome"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+          />
 
-                    <input type="number" id="health" name="health" placeholder="Digite a vida do seu Player" value={health} onChange={(e) => setHealt(e.target.value)} disabled />
-                    <label htmlFor="senha">Health:</label>
+          <label htmlFor="health">Health:</label>
+          <input
+            type="number"
+            id="health"
+            placeholder="Digite a vida do seu Player"
+            value={health}
+            onChange={(e) => setHealth(e.target.value)}
+          />
 
-                    <input type="number" id="attack" name="attack" placeholder="Digite o ataque do seu player" value={attack} onChange={(e) => setAttack(e.target.value)} disabled />
+          <label htmlFor="attack">Attack:</label>
+          <input
+            type="number"
+            id="attack"
+            placeholder="Digite o ataque do seu Player"
+            value={attack}
+            onChange={(e) => setAttack(e.target.value)}
+          />
 
-                    <button type="submit" className="btn"> Cadastrar</button>
-
-
-                </form>
-                <p id="mensagem"></p>
-            </section>
-        </div>
-
-    );
+          <button type="submit" className="btn">
+            Cadastrar
+          </button>
+        </form>
+        <p id="mensagem"></p>
+      </section>
+    </div>
+  );
 }
