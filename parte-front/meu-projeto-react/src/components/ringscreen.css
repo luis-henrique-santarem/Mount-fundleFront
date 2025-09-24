@@ -9,6 +9,7 @@
   box-shadow: 0 0 40px rgba(200, 160, 70, 0.15),
               inset 0 0 100px rgba(0, 0, 0, 0.6);
   position: relative;
+  
 
 }
 
@@ -86,4 +87,10 @@
 .card-btn:hover {
   background: linear-gradient(145deg, #f9da8a, #c39a4a);
   transform: scale(1.06);
+}
+
+
+.ring-title {
+  display: flex;
+  justify-content: center;
 }

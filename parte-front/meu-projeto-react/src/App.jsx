@@ -4,7 +4,7 @@ import Cadastro from "./components/cadastro";
 import Login from "./components/loginUser";
 import RingScreen from "./components/RingScreen";
 import CreateCharacter from "./components/CreateCharacter";
-import Home from "./pages/home/home";
+import Home from "../src/pages/home/Home";
 
 
 export default function App() {
@@ -12,7 +12,7 @@ export default function App() {
     <Router>
       <Routes>
 
-        <Route path="/" element={<Navigate to="/ringscreen" />} />
+        <Route path="/" element={<Navigate to="/Cadastro" />} />
         <Route path="/ringscreen" element={<RingScreen />} />
         <Route path="/player/register" element={<CreateCharacter/>}/>
 
